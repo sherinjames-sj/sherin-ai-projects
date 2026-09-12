@@ -182,7 +182,7 @@
 <div class="hero">
   <span class="eyebrow">🐕🐈 live ai tool</span>
   <h1>A <span>CV × job-fit</span> copilot that won't lie to you</h1>
-  <p>Paste a CV and a job description. Purrfect Match tells you the genuine overlap, what's missing, and how to word your real experience better — it will never invent a skill you don't have.</p>
+  <p>Paste a CV and a job description. Purrfect Match tells you the genuine overlap, what's missing, and how to word your real experience better. It will never invent a skill you don't have.</p>
 </div>
 
 <div class="wrap">
@@ -201,7 +201,7 @@
         <textarea id="jobInput" placeholder="Paste the job posting here..."></textarea>
       </div>
     </div>
-    <p class="details-note">Saved only in your browser (localStorage) — never sent anywhere except to this tool's own AI backend when you click an action button. Used by the Match, Interview Prep, Cover Letter and Chat tabs below.</p>
+    <p class="details-note">Saved only in your browser (localStorage), never sent anywhere except to this tool's own AI backend when you click an action button. Used by the Match, Interview Prep, Cover Letter and Chat tabs below.</p>
   </div>
 
   <nav class="tabs" id="tabNav">
@@ -218,7 +218,7 @@
     <section class="panel active" id="panel-match">
       <div class="card">
         <h3>💌 How well do you match?</h3>
-        <p class="lede">Fill in your CV and the job description above, then run the match. Honest overlap only — nothing invented.</p>
+        <p class="lede">Fill in your CV and the job description above, then run the match. Honest overlap only, nothing invented.</p>
         <button class="btn btn-primary" id="analyzeBtn">🔍 Analyze match</button>
         <div class="loading" id="analyzeLoading"><span class="spinner"></span> Comparing honestly...</div>
         <div class="error-banner" id="analyzeError"></div>
@@ -232,7 +232,7 @@
         <h3>🐾 Whiskers &amp; Biscuit</h3>
         <p class="lede">Your AI companion for wording help, pep talks, and job-hunt questions. It can see your saved CV/job details above for context.</p>
         <div class="chat-window" id="chatWindow">
-          <div class="msg bot">Hii, I'm Whiskers &amp; Biscuit 🐾 Ask me anything about your job hunt — wording a bullet point, calming pre-interview nerves, or just venting about application forms. What's up?</div>
+          <div class="msg bot">Hii, I'm Whiskers &amp; Biscuit 🐾 Ask me anything about your job hunt: wording a bullet point, calming pre-interview nerves, or just venting about application forms. What's up?</div>
         </div>
         <div class="error-banner" id="chatError"></div>
         <div class="chat-input-row">
@@ -258,7 +258,7 @@
     <section class="panel" id="panel-cover">
       <div class="card">
         <h3>✉️ Cover Letter Starter</h3>
-        <p class="lede">Drafts a starting point grounded only in the real experience in your CV — nothing made up, easy to personalise from there.</p>
+        <p class="lede">Drafts a starting point grounded only in the real experience in your CV, nothing made up and easy to personalise from there.</p>
         <button class="btn btn-primary" id="coverBtn">✉️ Draft cover letter</button>
         <div class="loading" id="coverLoading"><span class="spinner"></span> Drafting...</div>
         <div class="error-banner" id="coverError"></div>
@@ -282,7 +282,7 @@
             <option>Ghosted</option>
           </select>
           <input type="date" id="jDate">
-          <textarea id="jNotes" placeholder="Notes (optional) — contact name, next step, how it felt..."></textarea>
+          <textarea id="jNotes" placeholder="Notes (optional): contact name, next step, how it felt..."></textarea>
         </div>
         <button class="btn btn-primary btn-sm" id="jAdd">+ Add entry</button>
 
@@ -345,7 +345,7 @@
 
   async function callApi(path, body){
     if (!BACKEND_READY){
-      throw new Error("This demo's AI backend isn't connected yet — Sherin's still wiring it up. Check back soon!");
+      throw new Error("This demo's AI backend isn't connected yet. Sherin's still wiring it up. Check back soon!");
     }
     var res;
     try {
@@ -658,7 +658,7 @@
       dir = nextDir;
       var head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
       if (head.x < 0 || head.y < 0 || head.x >= cols || head.y >= rows || snake.some(function(s){return s.x===head.x && s.y===head.y;})){
-        running = false; statusEl.textContent = 'Game over — Start to retry';
+        running = false; statusEl.textContent = 'Game over, press Start to retry';
         return;
       }
       snake.unshift(head);
@@ -741,7 +741,7 @@
         if (hitX && hitY) running = false;
       });
       if (cat.y + cat.r > H || cat.y - cat.r < 0) running = false;
-      if (!running) statusEl.textContent = 'Game over — Start to retry';
+      if (!running) statusEl.textContent = 'Game over, press Start to retry';
       draw();
     }
     function draw(){

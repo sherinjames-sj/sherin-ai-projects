@@ -1,0 +1,26 @@
+name = "sherin-ai-projects-backend"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# The Anthropic API key is NOT set here. Set it as a secret instead:
+#   wrangler secret put ANTHROPIC_API_KEY
+# Secrets never get written to this file or committed to git.
+
+[vars]
+# Must exactly match the origin your GitHub Pages site is served from
+# (no trailing slash). This is the only origin the Worker will answer CORS for.
+ALLOWED_ORIGIN = "https://sherinjames-sj.github.io"
+
+# Optional: override the model used for every call. Check
+# https://docs.claude.com/en/docs/about-claude/models for the current
+# fastest/cheapest model id before deploying — model ids change over time
+# and the value below may no longer be current by the time you deploy.
+ANTHROPIC_MODEL = "claude-haiku-4-5"
+
+# Per-IP, per-route rate limiting needs a KV namespace bound as RATE_LIMIT.
+# Create it once with:
+#   wrangler kv namespace create RATE_LIMIT
+# then paste the id it prints into the binding below (see backend/README.md).
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"

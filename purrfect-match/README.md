@@ -26,7 +26,7 @@ Claude API, structured JSON prompting, vanilla JavaScript, Canvas, localStorage.
 
 ## Credit
 
-Built and designed by Sherin James, with Claude doing the actual CV to job comparison and writing help under the hood.
+Built and designed by Sherin James. Uses the Claude API for the matching, chat, and writing features.
 
 ---
 

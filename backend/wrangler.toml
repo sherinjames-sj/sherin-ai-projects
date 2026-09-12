@@ -13,7 +13,7 @@ ALLOWED_ORIGIN = "https://sherinjames-sj.github.io"
 
 # Optional: override the model used for every call. Check
 # https://docs.claude.com/en/docs/about-claude/models for the current
-# fastest/cheapest model id before deploying — model ids change over time
+# fastest/cheapest model id before deploying. Model ids change over time
 # and the value below may no longer be current by the time you deploy.
 ANTHROPIC_MODEL = "claude-haiku-4-5"
 

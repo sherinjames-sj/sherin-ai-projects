@@ -1,4 +1,4 @@
-# Sherin's AI Projects
+# Sherin's Projects
 
 Two small, live AI tools built by [Sherin James](https://sherinjames-sj.github.io/sherin-portfolio/). Each one is a static frontend on GitHub Pages backed by a small Claude powered server.
 

@@ -30,4 +30,4 @@ Built and designed by Sherin James. Uses the Claude API for the matching, chat, 
 
 ---
 
-Part of [Sherin's AI Projects](../). See the [backend](../backend/) for how the server side is wired up.
+Part of [Sherin's Projects](../). See the [backend](../backend/) for how the server side is wired up.

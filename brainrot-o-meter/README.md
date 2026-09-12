@@ -24,4 +24,4 @@ Claude API, streaming responses, structured JSON, vanilla JavaScript.
 
 ---
 
-Part of [Sherin's AI Projects](../). See the [backend](../backend/) for how the server side is wired up.
+Part of [Sherin's Projects](../). See the [backend](../backend/) for how the server side is wired up.

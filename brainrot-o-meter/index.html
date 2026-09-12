@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Baloo+2:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* Deliberately single-theme: a chaotic "digital brainrot" look, on purpose,
-     regardless of the viewer's light/dark preference — see artifact notes. */
+     regardless of the viewer's light/dark preference, see artifact notes. */
   :root{
     --bg:#0b0014; --surface:#170225; --surface-2:#22093a; --line:#3a1a52;
     --ink:#f5e9ff; --ink-soft:#c9a8e0; --ink-faint:#8a6aa8;
@@ -108,12 +108,12 @@
   <div class="hero">
     <span class="badge">🐀 live ai tool · built for fun</span>
     <h1 class="display">🧠 BRAINROT-<span class="hl">O</span>-METER</h1>
-    <p>Paste literally any text. Claude will diagnose its brainrot severity, roast it accordingly, and — if you're brave — translate it into maximum Gen Alpha. This is comedy. Please don't take it personally. 💅</p>
+    <p>Paste literally any text. Claude will diagnose its brainrot severity, roast it accordingly, and (if you're brave) translate it into maximum Gen Alpha. This is comedy. Please don't take it personally. 💅</p>
   </div>
 
   <div class="card">
     <h2>📥 Feed it some text</h2>
-    <p class="lede">A caption, a text convo, an essay intro, your group chat's finest moment — anything.</p>
+    <p class="lede">A caption, a text convo, an essay intro, your group chat's finest moment. Anything.</p>
     <textarea id="textInput" maxlength="4000" placeholder="paste something unhinged here..."></textarea>
     <div class="count" id="charCount">0 / 4000</div>
     <div class="btn-row">
@@ -168,14 +168,14 @@
   function hideError(){ errorBanner.classList.remove('show'); errorBanner.textContent = ''; }
 
   function friendlyError(e){
-    if (!BACKEND_READY) return "This demo's AI backend isn't connected yet — Sherin's still wiring it up. Check back soon!";
+    if (!BACKEND_READY) return "This demo's AI backend isn't connected yet. Sherin's still wiring it up. Check back soon!";
     return e && e.message ? e.message : 'Something went wrong. Try again?';
   }
 
   diagnoseBtn.addEventListener('click', async function(){
     hideError();
     var text = textInput.value.trim();
-    if (!text){ showError('Paste some text first — the meter needs something to judge.'); return; }
+    if (!text){ showError('Paste some text first. The meter needs something to judge.'); return; }
     if (!BACKEND_READY){ showError(friendlyError()); return; }
 
     diagnoseBtn.disabled = true; diagnoseLoading.classList.add('show'); resultBox.classList.remove('show');
@@ -206,7 +206,7 @@
   translateBtn.addEventListener('click', async function(){
     hideError();
     var text = textInput.value.trim();
-    if (!text){ showError('Paste some text first — nothing to translate yet.'); return; }
+    if (!text){ showError('Paste some text first. Nothing to translate yet.'); return; }
     if (!BACKEND_READY){ showError(friendlyError()); return; }
 
     translateBtn.disabled = true;

@@ -24,7 +24,7 @@ npm install -g wrangler
 wrangler login
 ```
 
-`wrangler login` opens a browser tab asking you to approve access — that's
+`wrangler login` opens a browser tab asking you to approve access. That's
 normal, it's how Wrangler connects to *your* Cloudflare account.
 
 ### 1. Create the rate-limit KV namespace
@@ -50,13 +50,13 @@ Copy that `id` value into `wrangler.toml` in this folder, replacing
 wrangler secret put ANTHROPIC_API_KEY
 ```
 
-Paste your key when prompted. This is stored encrypted by Cloudflare — it is
+Paste your key when prompted. This is stored encrypted by Cloudflare. It is
 never written to any file in this repo and never sent to the browser.
 
 ### 3. Check the model name is current
 
 Open `wrangler.toml` and check the `ANTHROPIC_MODEL` value against the
-current list at https://docs.claude.com/en/docs/about-claude/models — model
+current list at https://docs.claude.com/en/docs/about-claude/models. Model
 names change over time, so confirm it's still valid before deploying.
 
 ### 4. Check the allowed origin
@@ -95,18 +95,18 @@ wrangler deploy
 
 ## What's already built in
 
-- **Rate limiting** — 20 requests per IP per endpoint per hour (via the KV
+- **Rate limiting**: 20 requests per IP per endpoint per hour (via the KV
   namespace above). Tune `RATE_LIMIT_MAX` / `RATE_LIMIT_WINDOW_SECONDS` at
   the top of `worker.js` if you want it looser or stricter.
-- **Input length limits** — CVs/job descriptions capped at 9,000 characters,
+- **Input length limits**: CVs/job descriptions capped at 9,000 characters,
   chat messages at 2,000, Brainrot-O-Meter text at 4,000. Requests over that
   are rejected with a 400 before they ever reach the Claude API.
-- **CORS locked down** — only `ALLOWED_ORIGIN` gets a successful response;
-  other sites can't piggyback on your key from a browser.
-- **No key exposure** — the key lives only as a Cloudflare secret, read at
+- **CORS locked down**: only `ALLOWED_ORIGIN` gets a successful response,
+  so other sites can't piggyback on your key from a browser.
+- **No key exposure**: the key lives only as a Cloudflare secret, read at
   request time inside the Worker. It's never in the repo, never in a
   frontend file, never sent to the browser.
-- **Error handling** — validation errors return clear 400 messages, rate
+- **Error handling**: validation errors return clear 400 messages, rate
   limit hits return a friendly 429, and unexpected failures return a generic
   500 rather than leaking internals.
 
@@ -115,6 +115,6 @@ wrangler deploy
 Even if this got surprisingly popular, the rate limit caps each visitor's
 IP at 20 requests/hour per endpoint. With a small/fast model (the default,
 Haiku-class) and the token caps already set in `worker.js`, realistic worst
-case is a few dollars a month — and Cloudflare's free tier covers the
+case is a few dollars a month, and Cloudflare's free tier covers the
 compute itself. If you want a hard ceiling, Anthropic Console also lets you
 set a monthly spend limit on the API key.

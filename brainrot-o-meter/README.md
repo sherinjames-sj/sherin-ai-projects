@@ -24,8 +24,7 @@ Claude API, streaming responses, structured JSON, vanilla JavaScript.
 
 ## Credit
 
-Built and designed by Sherin James, with Claude handling the actual scoring, roasting, and translation.
-
+Built and designed by Sherin James. Uses the Claude API for the scoring and text generation.
 ---
 
 Part of [Sherin's AI Projects](../). See the [backend](../backend/) for how the server side is wired up.

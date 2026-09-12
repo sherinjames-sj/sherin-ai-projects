@@ -1,5 +1,5 @@
 /**
- * Sherin James — AI Projects backend
+  * Sherin James, AI Projects backend
  * A single Cloudflare Worker that proxies Purrfect Match and Brainrot-O-Meter
  * to the Claude API, so the Anthropic API key never touches the browser.
  *
@@ -197,7 +197,7 @@ async function handleBrainrotTranslate(body, env, origin) {
   const system = `Translate the user's text into maximum "Gen Alpha brainrot" slang: heavy, playful,
 deliberately over-the-top internet slang (think "skibidi", "gyatt", "rizz", "no cap", "fanum tax",
 "sigma", etc. used absurdly liberally). Keep the original meaning recognisable underneath the chaos.
-Keep it to a similar length to the input, or a little longer. This is comedy/wordplay only — do not
+Keep it to a similar length to the input, or a little longer. This is comedy/wordplay only, so do not
 add anything hateful, sexual, or otherwise inappropriate. Respond with ONLY the translated text, no
 preamble, no quotes around it, no explanation.`;
 
@@ -328,7 +328,7 @@ function sanitizeHistory(history) {
 
 async function checkRateLimit(env, ip, pathname) {
   if (!env.RATE_LIMIT) {
-    // No KV bound (e.g. local dev without --kv) — fail open rather than 500.
+    // No KV bound (e.g. local dev without --kv): fail open rather than 500.
     return { allowed: true };
   }
   const windowStart = Math.floor(Date.now() / 1000 / RATE_LIMIT_WINDOW_SECONDS);
